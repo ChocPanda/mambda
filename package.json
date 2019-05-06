@@ -1,0 +1,68 @@
+{
+  "name": "mambda",
+  "version": "0.0.1",
+  "description": "A Middleware and lifecycle framework for build AWS Lambdas",
+  "main": "dist/index.js",
+  "author": "ChocPanda",
+  "repository": "github:ChocPanda/mambda",
+  "bugs": "https://github.com/ChocPanda/mambda/issues",
+  "keywords": [
+    "aws",
+    "lambda",
+    "middleware",
+    "faas"
+  ],
+  "license": "MIT",
+  "private": false,
+  "scripts": {
+    "commit": "git-cz",
+    "build": "rollup -c",
+    "test": "ava",
+    "test:unit": "ava",
+    "test:cov": "nyc ava && nyc report",
+    "test:report": "nyc ava --tap | tap-junit --output ./reports/ava --name test-results.xml",
+    "lint": "xo",
+    "lint:test": "xo",
+    "lint:fix": "xo --fix",
+    "lint:report": "xo --reporter junit > ./reports/xo/test-results.xml",
+    "release": "semantic-release",
+    "docs-toc": "node ./scripts/update-toc.js"
+  },
+  "files": [
+    "dist/**/*.js",
+    "**/*.md",
+    "dist/**/*.d.ts"
+  ],
+  "dependencies": {
+    "http-errors": "^1.7.2"
+  },
+  "devDependencies": {
+    "@semantic-release/changelog": "^3.0.2",
+    "@semantic-release/git": "^7.0.8",
+    "ava": "^1.4.1",
+    "ava-env": "^2.0.0",
+    "commitizen": "^3.1.1",
+    "cz-conventional-changelog": "2.1.0",
+    "markdown-toc": "^1.2.0",
+    "ninos": "^3.0.0",
+    "nyc": "^14.0.0",
+    "path": "^0.12.7",
+    "rollup": "^1.10.1",
+    "rollup-plugin-commonjs": "^9.3.4",
+    "rollup-plugin-license": "^0.8.1",
+    "rollup-plugin-node-resolve": "^4.2.3",
+    "semantic-release": "^15.13.3",
+    "shelljs": "^0.8.3",
+    "shx": "^0.3.2",
+    "tap-junit": "^3.1.0",
+    "xo": "^0.24.0"
+  },
+  "xo": {
+    "prettier": "true"
+  },
+  "config": {
+    "commitizen": {
+      "path": "./node_modules/cz-conventional-changelog"
+    }
+  }
+}

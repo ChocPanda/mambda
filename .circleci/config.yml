@@ -1,0 +1,114 @@
+version: 2.1
+
+executors:
+  builder:
+    docker:
+      - image: circleci/node:latest
+
+orbs:
+  codecov: codecov/codecov@1.0.4
+
+jobs:
+    setup:
+        executor: builder
+        steps:
+        - checkout
+        - run:
+            name: Update NPM
+            command: 'sudo npm install -g npm@latest'
+        - restore_cache:
+            name: Restore Yarn Package Cache
+            keys:
+                - yarn-packages-{{ checksum "yarn.lock" }}
+        - run:
+            name: Install Dependencies
+            command: yarn install --frozen-lockfile
+        - save_cache:
+            name: Save Yarn Package Cache
+            key: yarn-packages-{{ checksum "yarn.lock" }}
+            paths:
+                - ~/.cache/yarn
+        - run:
+            name: Create Reports Directory
+            command: mkdir -p ./reports/xo; mkdir -p ./reports/ava
+        - persist_to_workspace:
+            root: .
+            paths:
+                - "*"
+
+    test:
+        executor: builder
+        steps:
+            - attach_workspace:
+                at: .
+            - run: # run unit tests
+                name: Unit Test
+                command: 'yarn run test:report'
+            - run: # run coverage report
+                name: Code Coverage
+                command: 'yarn run test:cov'
+            - store_artifacts:
+                path: ./reports
+            - store_test_results:
+                path: ./reports
+            - codecov/upload:
+                file: './reports/coverage/lcov.info'
+
+    lint:
+        executor: builder
+        steps:
+            - attach_workspace:
+                at: .
+            - run:
+                name: Lint Test
+                command: 'yarn lint:report'
+            - store_artifacts:
+                path: ./reports
+            - store_test_results:
+                path: ./reports
+
+    build:
+        executor: builder
+        steps:
+            - attach_workspace:
+                at: .
+            - run:
+                name: Build
+                command: 'yarn build'
+            - store_artifacts:
+                path: ./dist
+            - persist_to_workspace:
+                root: .
+                paths:
+                    - ./dist
+
+    publish-github-release:
+        executor: builder
+        steps:
+        - attach_workspace:
+            at: .
+        - run:
+            name: Update the README tables of contents
+            command: yarn docs-toc
+        - run:
+            name: Publish Release on GitHub
+            command: yarn release
+
+workflows:
+    main:
+        jobs:
+            - setup
+            - lint:
+                requires: [ setup ]
+            - test:
+                requires: [ setup ]
+            - build:
+                requires: [ lint, test ]
+            - publish-github-release:
+                requires:
+                    - build
+                filters:
+                    branches:
+                        only: master
+                    tags:
+                        only: /^\d+\.\d+\.\d+$/
