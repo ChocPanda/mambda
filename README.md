@@ -29,11 +29,11 @@
   </a>
 </p>
 
-An opinionated Middleware and lifecycle framework for building service functions in AWS lambda functions.
+A middleware and lifecycle framework for building service functions in AWS lambda functions.
 
 ## Inspiration
 
-This project was inspired by [middy js](https://github.com/middyjs/middy), `a stylish library with some excellent tooling for building service functions`. The project has taken a few of those ideas and attempts to apply a more [functional programming style](https://codeburst.io/functional-programming-in-javascript-e57e7e28c0e5) to their implementation.
+This project was inspired by [middy js](https://github.com/middyjs/middy), `a stylish library with some excellent tooling for building service functions`. The project has taken a few of those ideas and attempts to apply a more [functional programming style](https://codeburst.io/functional-programming-in-javascript-e57e7e28c0e5) to their implementation. The project was originally created and started at [aws-middleware-js](https://github.com/ChocPanda/aws-middleware-js)
 
 ## Contents
 
