@@ -199,6 +199,7 @@ exports.handler = lambda({
 
 - [JSON Body Parser](./src/middlewares/json-body-parser/README.md)
 - [Http Error Handling](./src/middlewares/http-error-handler/README.md)
+- Http Header Normalizer - [Coming soon...](https://github.com/ChocPanda/mambda/issues/9)
 - Content Negotiation - [Coming soon...](https://github.com/ChocPanda/mambda/issues/4)
 - Http Query Parser - [Coming soon...](https://github.com/ChocPanda/mambda/issues/5)
 - [...Your idea here](https://github.com/ChocPanda/mambda/issues/new)
