@@ -4,7 +4,7 @@ const normalize = key =>
 		.map(component => component.charAt(0).toUpperCase() + component.slice(1))
 		.join('-');
 
-const normalizeHeaders = (input = {}) => {
+const normalizeHeaders = input => {
 	const collatedHeaders = [
 		...Object.entries(input.headers || {}),
 		...Object.entries(input.multiValueHeaders || {})
@@ -32,15 +32,13 @@ const normalizeHeaders = (input = {}) => {
 };
 
 module.exports = () => ({
-	before: (event = { headers: {}, multiValueHeaders: {} }) => {
+	before: event => {
 		const normalized = normalizeHeaders(event);
 		return {
 			...normalized,
 			headers: { ...normalized.headers, ...normalized.multiValueHeaders }
 		};
 	},
-	after: (response = { headers: {}, multiValueHeaders: {} }) =>
-		normalizeHeaders(response),
-	onError: (response = { headers: {}, multiValueHeaders: {} }) =>
-		normalizeHeaders(response)
+	after: response => normalizeHeaders(response),
+	onError: response => normalizeHeaders(response)
 });
