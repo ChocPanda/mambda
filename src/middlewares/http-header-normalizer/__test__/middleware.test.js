@@ -1,25 +1,97 @@
 const test = require('ava');
-const middleware = require('../middleware');
+const middleware = require('../middleware')();
 
-test.todo('HttpHeaderNormalizer - should canonicalize an input header');
-test.todo('HttpHeaderNormalizer - should canonicalize all input headers');
-test.todo(
-	'HttpHeaderNormalizer - should not change input headers with canonical names'
-);
-test.todo('HttpHeaderNormalizer - should seperate normal and multi-value headers')
+test('HttpHeaderNormalizer - should canonicalize an input header', t => {
+	const headers = {
+		'header-key': 'header-value'
+	};
 
-test.todo('HttpHeaderNormalizer - should canonicalize an output header');
-test.todo('HttpHeaderNormalizer - should canonicalize all output headers');
-test.todo(
-	'HttpHeaderNormalizer - should not change output headers with canonical names'
-);
+	const expectedInput = {
+		headers: { 'Header-Key': 'header-value' },
+		multiValueHeaders: {}
+	};
 
-test.todo(
-	'HttpHeaderNormalizer - should canonicalize an output header on error'
-);
-test.todo(
-	'HttpHeaderNormalizer - should canonicalize all output headers on error'
-);
-test.todo(
-	'HttpHeaderNormalizer - should not change output headers on error with canonical names'
-);
+	Object.values(middleware).forEach(objUnderTest =>
+		t.deepEqual(objUnderTest({ headers }), expectedInput)
+	);
+});
+
+test('HttpHeaderNormalizer - should canonicalize all input headers', t => {
+	const headers = {
+		'header-key-one': 'header-value',
+		'header-key-two': 'header-value',
+		'header-key-three': 'header-value'
+	};
+
+	const expectedInput = {
+		headers: {
+			'Header-Key-One': 'header-value',
+			'Header-Key-Two': 'header-value',
+			'Header-Key-Three': 'header-value'
+		},
+		multiValueHeaders: {}
+	};
+
+	Object.values(middleware).forEach(objUnderTest =>
+		t.deepEqual(objUnderTest({ headers }), expectedInput)
+	);
+});
+
+test('HttpHeaderNormalizer - should not change input headers with canonical names', t => {
+	const headers = {
+		'header-key-one': 'header-value',
+		'Header-Key-Two': 'header-value',
+		'header-key-three': 'header-value'
+	};
+
+	const expectedInput = {
+		headers: {
+			'Header-Key-One': 'header-value',
+			'Header-Key-Two': 'header-value',
+			'Header-Key-Three': 'header-value'
+		},
+		multiValueHeaders: {}
+	};
+
+	Object.values(middleware).forEach(objUnderTest =>
+		t.deepEqual(objUnderTest({ headers }), expectedInput)
+	);
+});
+
+test('HttpHeaderNormalizer - should seperate single and multi-value headers', t => {
+	const headers = {
+		'header-key': 'header-value',
+		'multi-header-key': ['header-value-1', 'header-value-2']
+	};
+
+	const expectedHeaders = {
+		headers: { 'Header-Key': 'header-value' },
+		multiValueHeaders: {
+			'Multi-Header-Key': ['header-value-1', 'header-value-2']
+		}
+	};
+
+	[middleware.after, middleware.onError].forEach(objUnderTest =>
+		t.deepEqual(objUnderTest({ headers }), expectedHeaders)
+	);
+});
+
+test('HttpHeaderNormalizer - before middleware - should merge the single and multi value headers', t => {
+	const headers = {
+		'header-key': 'header-value',
+		'multi-header-key': ['header-value-1', 'header-value-2']
+	};
+
+	const expectedHeaders = {
+		headers: {
+			'Header-Key': 'header-value',
+			'Multi-Header-Key': ['header-value-1', 'header-value-2']
+		},
+		multiValueHeaders: {
+			'Multi-Header-Key': ['header-value-1', 'header-value-2']
+		}
+	};
+
+	const objUnderTest = middleware.before;
+	t.deepEqual(objUnderTest({ headers }), expectedHeaders);
+});

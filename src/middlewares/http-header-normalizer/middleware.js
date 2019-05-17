@@ -1,28 +1,44 @@
-const normalize = key => key;
+const normalize = key =>
+	key
+		.split('-')
+		.map(component => component.charAt(0).toUpperCase() + component.slice(1))
+		.join('-');
 
-const normalizeHeaders = (input = { headers: {}, multiValueHeaders: {} }) => {
+const normalizeHeaders = (input = {}) => {
 	const collatedHeaders = [
-		...Object.entries(input.headers),
-		...Object.entries(input.multiValueHeaders)
+		...Object.entries(input.headers || {}),
+		...Object.entries(input.multiValueHeaders || {})
 	];
 
 	return {
 		...input,
-		headers: collatedHeaders
-			.filter(([, headerValue]) => !Array.isArray(headerValue))
-			.reduce(
-				(accHeaders, [headerKey, headerValue]) => ({
-					...accHeaders,
-					[normalize(headerKey)]: headerValue
-				}),
-				{}
-			)
+		...collatedHeaders.reduce(
+			({ headers, multiValueHeaders }, [headerKey, headerValue]) =>
+				Array.isArray(headerValue)
+					? {
+							headers,
+							multiValueHeaders: {
+								...multiValueHeaders,
+								[normalize(headerKey)]: headerValue
+							}
+					  }
+					: {
+							multiValueHeaders,
+							headers: { ...headers, [normalize(headerKey)]: headerValue }
+					  },
+			{ headers: {}, multiValueHeaders: {} }
+		)
 	};
 };
 
-export default () => ({
-	before: (event = { headers: {}, multiValueHeaders: {} }) =>
-		normalizeHeaders(event),
+module.exports = () => ({
+	before: (event = { headers: {}, multiValueHeaders: {} }) => {
+		const normalized = normalizeHeaders(event);
+		return {
+			...normalized,
+			headers: { ...normalized.headers, ...normalized.multiValueHeaders }
+		};
+	},
 	after: (response = { headers: {}, multiValueHeaders: {} }) =>
 		normalizeHeaders(response),
 	onError: (response = { headers: {}, multiValueHeaders: {} }) =>
