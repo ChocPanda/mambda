@@ -472,7 +472,7 @@ const useMiddlewareTestMacro = async (
  * The Wrapped lambda function - withLogger
  */
 
-test('The Wrapped lambda function - withLogger should create a lambda function with the new logger', async t => {
+test('Wrapped lambda function - withLogger should create a lambda function with the new logger', async t => {
 	const stubHandler = () => 'result';
 	const stubLogger = {
 		info: t.context.stub(),
