@@ -39,6 +39,24 @@ This project was inspired by [middy js](https://github.com/middyjs/middy), `a st
 
 <!-- toc -->
 
+- [API](#api)
+  - [Simple example using callbacks](#simple-example-using-callbacks)
+  - [Promises](#promises)
+  - [Middlewares](#middlewares)
+- [Lifecycle additions](#lifecycle-additions)
+- [Logging](#logging)
+  - [Logging API](#logging-api)
+- [Middleware](#middleware)
+- [Custom Middlewares](#custom-middlewares)
+- [AWS Middleware JS Lifecycle](#aws-middleware-js-lifecycle)
+- [Why](#why)
+- [Take advantage of Execution Context reuse to improve the performance of your function](#take-advantage-of-execution-context-reuse-to-improve-the-performance-of-your-function)
+- [Reduce boilerplate for writing lambda functions](#reduce-boilerplate-for-writing-lambda-functions)
+- [References](#references)
+- [Notes](#notes)
+- [Contributions](#contributions)
+- [Conventional Commits](#conventional-commits)
+
 <!-- tocstop -->
 
 ## Usage
@@ -199,13 +217,14 @@ exports.handler = lambda({
 
 - [JSON Body Parser](./src/middlewares/json-body-parser/README.md)
 - [Http Error Handling](./src/middlewares/http-error-handler/README.md)
-- Content Negotiation - [Coming soon...](https://github.com/ChocPanda/mambda/issues/4)
-- Http Query Parser - [Coming soon...](https://github.com/ChocPanda/mambda/issues/5)
+- [Http Header Normalizer](./src/middlewares/http-error-handler/README.md)
+- *Content Negotiation* - [Coming soon...](https://github.com/ChocPanda/mambda/issues/4)
+- *Http Query Parser* - [Coming soon...](https://github.com/ChocPanda/mambda/issues/5)
 - [...Your idea here](https://github.com/ChocPanda/mambda/issues/new)
 
 ### Custom Middlewares
 
-Can't find quite what you're looking for? Why not [consider contributing...](./CONTRIBUTING.md), [raising a feature request](https://github.com/ChocPanda/mambda/issues/new?assignees=&labels=&template=feature_request.md&title=) or upvoting an [existing one](https://github.com/ChocPanda/mambda/issues) counts and is helpful in prioritisation, but if you're in a hurry here's how to create custom middleware.
+Can't find quite what you're looking for? Why not [consider contributing...](./CONTRIBUTING.md), [raising a feature request](https://github.com/ChocPanda/mambda/issues/new?assignees=&labels=&template=feature_request.md&title=) or upvoting an [existing one](https://github.com/ChocPanda/mambda/issues) it would be much appreciated and is really helpful in prioritisation, but if you're in a hurry here's how to create custom middleware.
 
 The middlewares are all simple javascript objects with **atleast 1** of the following 3 functions:
 

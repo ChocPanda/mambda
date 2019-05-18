@@ -1,6 +1,6 @@
 # HTTP Error Handling Middleware
 
-An [mambda](https://github.com/ChocPanda/mambda) middleware handles [http-errors](https://github.com/jshttp/http-errors) thrown during lambda execution.
+A [mambda](https://github.com/ChocPanda/mambda) middleware handles [http-errors](https://github.com/jshttp/http-errors) thrown during lambda execution.
 
 ## Contents
 
