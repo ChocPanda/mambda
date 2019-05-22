@@ -1,7 +1,5 @@
 # MAMBDA
 
-## CURRENTLY STILL A WORK IN PROGRESS
-
 <p align="center">
   <a href="https://circleci.com/gh/ChocPanda/mambda" alt="CircleCI">
     <img src="https://img.shields.io/circleci/project/github/ChocPanda/mambda/master.svg?style=popout"/>
