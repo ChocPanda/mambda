@@ -1,3 +1,10 @@
+# [1.1.0](https://github.com/ChocPanda/mambda/compare/v1.0.0...v1.1.0) (2019-05-22)
+
+
+### Features
+
+* **npm:** Release the package to npm ([cb896dd](https://github.com/ChocPanda/mambda/commit/cb896dd)), closes [#6](https://github.com/ChocPanda/mambda/issues/6)
+
 # 1.0.0 (2019-05-18)
 
 
@@ -5,4 +12,3 @@
 
 * **http-header-normalizer:** Implement the http-header middleware ([bbd666d](https://github.com/ChocPanda/mambda/commit/bbd666d)), closes [#9](https://github.com/ChocPanda/mambda/issues/9)
 * **http-header-normalizer:** Init the branch of work ([39c084d](https://github.com/ChocPanda/mambda/commit/39c084d)), closes [#9](https://github.com/ChocPanda/mambda/issues/9)
-

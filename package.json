@@ -1,6 +1,6 @@
 {
   "name": "mambda",
-  "version": "1.0.0",
+  "version": "1.1.0",
   "description": "A Middleware and lifecycle framework for build AWS Lambdas",
   "main": "dist/index.js",
   "author": "ChocPanda",
