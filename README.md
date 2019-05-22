@@ -68,7 +68,6 @@ This project was inspired by [middy js](https://github.com/middyjs/middy), `a st
 <!-- tocstop -->
 
 ## Installation
-## Installation
 
 - Install using yarn:
 ```yarn add mambda```
