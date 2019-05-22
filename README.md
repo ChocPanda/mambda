@@ -12,6 +12,9 @@
   <a href="https://david-dm.org/ChocPanda/mambda" alt="dependencies">
     <img src="https://david-dm.org/ChocPanda/mambda.svg"/>
   </a>
+  <a href="https://www.npmjs.com/package/mambda" alt="npm">
+    <img alt="npm" src="https://img.shields.io/npm/v/mambda.svg?label=npm%40latest&style=popout">
+  </a>
   <a href="https://github.com/ChocPanda/mambda/blob/master/LICENSE" alt="license">
     <img src="https://img.shields.io/github/license/ChocPanda/mambda.svg?style=popout"/>
   </a>
@@ -39,23 +42,28 @@ This project was inspired by [middy js](https://github.com/middyjs/middy), `a st
 
 <!-- toc -->
 
-- [API](#api)
-  - [Simple example using callbacks](#simple-example-using-callbacks)
-  - [Promises](#promises)
-  - [Middlewares](#middlewares)
-- [Lifecycle additions](#lifecycle-additions)
-- [Logging](#logging)
-  - [Logging API](#logging-api)
-- [Middleware](#middleware)
-- [Custom Middlewares](#custom-middlewares)
-- [AWS Middleware JS Lifecycle](#aws-middleware-js-lifecycle)
-- [Why](#why)
-- [Take advantage of Execution Context reuse to improve the performance of your function](#take-advantage-of-execution-context-reuse-to-improve-the-performance-of-your-function)
-- [Reduce boilerplate for writing lambda functions](#reduce-boilerplate-for-writing-lambda-functions)
-- [References](#references)
-- [Notes](#notes)
-- [Contributions](#contributions)
-- [Conventional Commits](#conventional-commits)
+- [MAMBDA](#mambda)
+  - [CURRENTLY STILL A WORK IN PROGRESS](#currently-still-a-work-in-progress)
+  - [Inspiration](#inspiration)
+  - [Contents](#contents)
+  - [Usage](#usage)
+    - [API](#api)
+      - [Simple example using callbacks](#simple-example-using-callbacks)
+      - [Promises](#promises)
+      - [Middlewares](#middlewares)
+    - [Lifecycle additions](#lifecycle-additions)
+    - [Logging](#logging)
+      - [Logging API](#logging-api)
+  - [Middleware](#middleware)
+    - [Custom Middlewares](#custom-middlewares)
+  - [AWS Middleware JS Lifecycle](#aws-middleware-js-lifecycle)
+  - [Why](#why)
+    - [Take advantage of Execution Context reuse to improve the performance of your function](#take-advantage-of-execution-context-reuse-to-improve-the-performance-of-your-function)
+    - [Reduce boilerplate for writing lambda functions](#reduce-boilerplate-for-writing-lambda-functions)
+  - [References](#references)
+  - [Notes](#notes)
+  - [Contributions](#contributions)
+    - [Conventional Commits](#conventional-commits)
 
 <!-- tocstop -->
 
