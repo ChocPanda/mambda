@@ -67,11 +67,15 @@ This project was inspired by [middy js](https://github.com/middyjs/middy), `a st
 
 <!-- tocstop -->
 
-## Usage
+## Installation
+## Installation
 
-  [Coming soon...](https://github.com/ChocPanda/mambda/milestone/1)
+- Install using yarn:
+```yarn add mambda```
+- Install using npm:
+```npm install mambda```
 
-### API
+### Usage
 
 mambda fits seemlessly into the [programming model](https://docs.aws.amazon.com/lambda/latest/dg/nodejs-prog-model-handler.html) for writing AWS lambdas
 
