@@ -6,14 +6,18 @@ A [mambda](https://github.com/ChocPanda/mambda) middleware which parses the requ
 
 <!-- toc -->
 
-- [Usage](#usage)
-- [Configuration](#configuration)
+- [JSON Body Parsing Middleware](#json-body-parsing-middleware)
+	- [Contents](#contents)
+	- [Example](#example)
+	- [Usage](#usage)
+	- [Configuration](#configuration)
 
 <!-- tocstop -->
 
 ## Example
 
 Given the event:
+
 ```javascript
 const event = {
 	headers: {
@@ -26,6 +30,7 @@ const event = {
 ```
 
 The middleware would result in:
+
 ```javascript
 const result = {
 	headers: {
@@ -50,6 +55,7 @@ Ensure the ['mambda'](../../../README.md#Usage) has been added as a dependency t
 The json body parser can either be passed as part of the middlewares array:
 
 ```javascript
+
 const lambda = require('mambda');
 const jsonParser = require('mambda/middlewares/json-body-parser');
 
@@ -67,6 +73,7 @@ module.exports.handler = lambda({ handler, middlewares: [
 Or can be added to an existing lambda func using the use function
 
 ```javascript
+
 const lambda = require('mambda');
 const jsonParser = require('mambda/middlewares/json-body-parser');
 
