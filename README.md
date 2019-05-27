@@ -7,6 +7,9 @@
   <a href="https://codecov.io/gh/ChocPanda/mambda" alt="codecov">
     <img src="https://codecov.io/gh/ChocPanda/mambda/branch/master/graph/badge.svg"/>
   </a>
+  <a href="https://app.codacy.com/app/ChocPanda/mambda?utm_source=github.com&utm_medium=referral&utm_content=ChocPanda/mambda&utm_campaign=Badge_Grade_Dashboard" alt="Codacy Badge">
+    <img src="https://api.codacy.com/project/badge/Grade/eb560d0d91a542d3b4ff913e1b94789c"/>
+  </a>
   <a href="https://david-dm.org/ChocPanda/mambda" alt="dependencies">
     <img src="https://david-dm.org/ChocPanda/mambda.svg"/>
   </a>
@@ -41,11 +44,10 @@ This project was inspired by [middy js](https://github.com/middyjs/middy), `a st
 <!-- toc -->
 
 - [MAMBDA](#mambda)
-  - [CURRENTLY STILL A WORK IN PROGRESS](#currently-still-a-work-in-progress)
   - [Inspiration](#inspiration)
   - [Contents](#contents)
-  - [Usage](#usage)
-    - [API](#api)
+  - [Installation](#installation)
+    - [Usage](#usage)
       - [Simple example using callbacks](#simple-example-using-callbacks)
       - [Promises](#promises)
       - [Middlewares](#middlewares)
