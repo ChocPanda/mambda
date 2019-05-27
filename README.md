@@ -1,5 +1,7 @@
 # MAMBDA
 
+[![Codacy Badge](https://api.codacy.com/project/badge/Grade/eb560d0d91a542d3b4ff913e1b94789c)](https://app.codacy.com/app/ChocPanda/mambda?utm_source=github.com&utm_medium=referral&utm_content=ChocPanda/mambda&utm_campaign=Badge_Grade_Dashboard)
+
 <p align="center">
   <a href="https://circleci.com/gh/ChocPanda/mambda" alt="CircleCI">
     <img src="https://img.shields.io/circleci/project/github/ChocPanda/mambda/master.svg?style=popout"/>
