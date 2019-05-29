@@ -35,7 +35,7 @@ module.exports = ({
 					status: wrappedError.status,
 					statusCode: wrappedError.statusCode,
 					headers: wrappedError.headers || {},
-					body: responseBodyFn(wrappedError),
+					body: responseBodyFn(wrappedError)
 				};
 			}
 		}
