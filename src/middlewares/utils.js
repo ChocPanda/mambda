@@ -71,10 +71,13 @@ const reduceMiddlewares = ({
 function ExtendedHttpError(...args) {
 	const error = createError(...args);
 	const self = this;
-
+	
 	Object.entries(error).forEach(([key, value]) => {
 		self[key] = value;
 	});
+
+	Error.captureStackTrace(this, error)
+	this.message = error.message;
 }
 
 ExtendedHttpError.prototype = Object.create(HttpError.prototype);
