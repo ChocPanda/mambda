@@ -6,11 +6,8 @@ A [mambda](https://github.com/ChocPanda/mambda) middleware handles [http-errors]
 
 <!-- toc -->
 
--   [HTTP Error Handling Middleware](#http-error-handling-middleware)
-    		\- [Contents](#contents)
-    		\- [Example](#example)
-    		\- [Usage](#usage)
-    		\- [Configuration](#configuration)
+- [Usage](#usage)
+- [Configuration](#configuration)
 
 <!-- tocstop -->
 

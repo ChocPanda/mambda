@@ -6,11 +6,8 @@ A [mambda](https://github.com/ChocPanda/mambda) middleware which parses the requ
 
 <!-- toc -->
 
--   [JSON Body Parsing Middleware](#json-body-parsing-middleware)
-    		\- [Contents](#contents)
-    		\- [Example](#example)
-    		\- [Usage](#usage)
-    		\- [Configuration](#configuration)
+- [Usage](#usage)
+- [Configuration](#configuration)
 
 <!-- tocstop -->
 

@@ -6,7 +6,7 @@ A [mambda](https://github.com/ChocPanda/mambda) middleware which will rewrite th
 
 <!-- toc -->
 
--   [Usage](#usage)
+- [Usage](#usage)
 
 <!-- tocstop -->
 
