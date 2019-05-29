@@ -53,6 +53,9 @@ jobs:
                 path: ./reports
             - codecov/upload:
                 file: './reports/coverage/lcov.info'
+            - run: 
+                name: Uploading Codacy report
+                command: cat ./reports/coverage/lcov.info | yarn run codacy-coverage
 
     lint:
         executor: builder
