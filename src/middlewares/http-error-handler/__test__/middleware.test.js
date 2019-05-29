@@ -34,7 +34,7 @@ test('Http Error Handling Middleware - Should not include stack traces in produc
 test('Http Error Handling Middleware - Should handle include stack traces in dev builds', t => {
 	const error = new Error(`Couldn't find any bugs`);
 	const { onError: objUnderTest } = middleware();
-	t.context.env({ NODE_ENV: 'production' });
+	t.context.env({ NODE_ENV: 'development' });
 
 	t.snapshot(objUnderTest(undefined, error, 'event', 'context'));
 });
