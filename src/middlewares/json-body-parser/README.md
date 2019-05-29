@@ -6,14 +6,18 @@ A [mambda](https://github.com/ChocPanda/mambda) middleware which parses the requ
 
 <!-- toc -->
 
-- [Usage](#usage)
-- [Configuration](#configuration)
+-   [JSON Body Parsing Middleware](#json-body-parsing-middleware)
+    		\- [Contents](#contents)
+    		\- [Example](#example)
+    		\- [Usage](#usage)
+    		\- [Configuration](#configuration)
 
 <!-- tocstop -->
 
 ## Example
 
 Given the event:
+
 ```javascript
 const event = {
 	headers: {
@@ -26,6 +30,7 @@ const event = {
 ```
 
 The middleware would result in:
+
 ```javascript
 const result = {
 	headers: {
@@ -62,8 +67,8 @@ const handler = (event, context, callback) => {
 module.exports.handler = lambda({ handler, middlewares: [
 	jsonParser({ assumeJson: false, deserialize: JSON.parse }) // These are default values for the config and therefore unnecessary
 ]});
-
 ```
+
 Or can be added to an existing lambda func using the use function
 
 ```javascript
@@ -81,10 +86,9 @@ const lambdaFunc = lambda(handler)
 module.exports.handler = lambdaFunc.use(
 	jsonParser({ assumeJson: false, deserialize: JSON.parse }) // These are default values for the config and therefore unnecessary
 );
-
 ```
 
 ## Configuration
 
-- **assumeJson** (default: false): Will attempt to deserialize the request body as json if the `Content-Type` has not been specified.
-- **deserialize** (default: [JSON.parse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)): The json parse function to use when deserializing request body.
+-   **assumeJson** (default: false): Will attempt to deserialize the request body as json if the `Content-Type` has not been specified.
+-   **deserialize** (default: [JSON.parse](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/JSON/parse)): The json parse function to use when deserializing request body.

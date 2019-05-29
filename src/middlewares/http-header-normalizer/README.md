@@ -6,13 +6,14 @@ A [mambda](https://github.com/ChocPanda/mambda) middleware which will rewrite th
 
 <!-- toc -->
 
-- [Usage](#usage)
+-   [Usage](#usage)
 
 <!-- tocstop -->
 
 ## Example
 
 Given the event:
+
 ```javascript
 const event = {
 	headers: {
@@ -29,6 +30,7 @@ const event = {
 ```
 
 The middleware would result in:
+
 ```javascript
 const result = {
 	headers: {
@@ -64,8 +66,8 @@ const handler = (event, context, callback) => {
 module.exports.handler = lambda({ handler, middlewares: [
 	httpHeaderNormalizer()
 ]});
-
 ```
+
 Or can be added to an existing lambda func using the use function
 
 ```javascript
@@ -81,5 +83,4 @@ const handler = (event, context, callback) => {
 const lambdaFunc = lambda(handler)
 
 module.exports.handler = lambdaFunc.use(httpHeaderNormalizer());
-
 ```
