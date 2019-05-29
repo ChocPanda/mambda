@@ -6,8 +6,11 @@ A [mambda](https://github.com/ChocPanda/mambda) middleware handles [http-errors]
 
 <!-- toc -->
 
-- [Usage](#usage)
-- [Configuration](#configuration)
+-   [HTTP Error Handling Middleware](#http-error-handling-middleware)
+    		\- [Contents](#contents)
+    		\- [Example](#example)
+    		\- [Usage](#usage)
+    		\- [Configuration](#configuration)
 
 <!-- tocstop -->
 
@@ -80,8 +83,8 @@ const handler = (event, context, callback) => {
 module.exports.handler = lambda({ handler, middlewares: [
 	httpErrorHandler({ defaultStatus: 500, createResponseBody: ... }) // These are default values for the config and therefore unnecessary
 ]});
-
 ```
+
 Or can be added to an existing lambda func using the `use` function
 
 ```javascript
@@ -93,13 +96,12 @@ const lambdaFunc = lambda((event, context, callback) => { /* function code... */
 module.exports.handler = lambdaFunc.use(
 	httpErrorHandler({ defaultStatus: 500, createResponseBody: ... }) // These are default values for the config and therefore unnecessary
 );
-
 ```
 
 ## Configuration
 
-- **defaultStatus** (default: 500): The status code of non-http-error responses.
-- **responseBodyParams** (default: `{ includeMessage: false }`):
-  Parameters used to configure how the body of the error response is formatted
-  If you're using the default response body the includeMessage param can be set to include error messages in the response in production
-- **createResponseBody** : A function to create the body of the error response
+-   **defaultStatus** (default: 500): The status code of non-http-error responses.
+-   **responseBodyParams** (default: `{ includeMessage: false }`):
+-   Parameters used to configure how the body of the error response is formatted
+-   If you're using the default response body the includeMessage param can be set to include error messages in the response in production
+-   **createResponseBody** : A function to create the body of the error response
