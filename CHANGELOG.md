@@ -1,3 +1,10 @@
+## [1.1.1](https://github.com/ChocPanda/mambda/compare/v1.1.0...v1.1.1) (2019-06-01)
+
+
+### Bug Fixes
+
+* **http-error-handler:** Fix bug in the response message ([e9d573f](https://github.com/ChocPanda/mambda/commit/e9d573f))
+
 # [1.1.0](https://github.com/ChocPanda/mambda/compare/v1.0.0...v1.1.0) (2019-05-22)
 
 
