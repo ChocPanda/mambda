@@ -17,8 +17,8 @@
   "scripts": {
     "commit": "git-cz",
     "build": "rollup -c",
-    "test": "ava",
-    "test:unit": "ava",
+    "test": "nyc ava",
+    "test:unit": "nyc ava",
     "test:cov": "nyc ava && nyc report",
     "test:report": "nyc ava --tap | tap-junit --output ./reports/ava --name test-results.xml",
     "lint": "xo",

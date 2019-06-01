@@ -2,9 +2,9 @@ const { HttpError } = require('http-errors');
 const { createHttpError } = require('../utils');
 
 const defaultResponseBody = ({ includeMessage }) => error =>
-	process.env.NODE_ENV === 'developement'
-		? `A ${typeof error} occurred: ${error.message};\n\n${error.stack}`
-		: `A ${typeof error} occurred: ${includeMessage && error.message}`;
+	process.env.NODE_ENV === 'development'
+		? `An error occurred: ${error.message};\n\n${error.stack}`
+		: `An error occurred: ${includeMessage && error.message}`;
 
 module.exports = ({
 	defaultStatus = 500,
@@ -29,12 +29,13 @@ module.exports = ({
 					error.status || error.statusCode || defaultStatus,
 					error
 				);
+
 				return {
+					...event,
 					status: wrappedError.status,
 					statusCode: wrappedError.statusCode,
 					headers: wrappedError.headers || {},
-					body: responseBodyFn(wrappedError),
-					...event
+					body: responseBodyFn(wrappedError)
 				};
 			}
 		}
