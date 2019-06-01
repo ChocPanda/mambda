@@ -56,7 +56,6 @@ This project was inspired by [middy js](https://github.com/middyjs/middy), `a st
 			- [Logging API](#logging-api)
 	- [Middleware](#middleware)
 		- [Custom Middlewares](#custom-middlewares)
-	- [AWS Middleware JS Lifecycle](#aws-middleware-js-lifecycle)
 	- [Why](#why)
 		- [Take advantage of Execution Context reuse](#take-advantage-of-execution-context-reuse)
 		- [Reduce boilerplate for writing lambda functions](#reduce-boilerplate-for-writing-lambda-functions)
@@ -162,7 +161,9 @@ exports.handler = lambda(myAsyncHandler)
 
 ### Lifecycle additions
 
-Currently this is just adding an initialisation step to the lambda function, mambda lazily evaluates the resource and caches the result for [reuse of the execution enviroment](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html).
+Mambda adds an initialisation step to the lambda function, mambda lazily evaluates the resource and caches the result for [reuse of the execution enviroment](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html).
+
+![Lifecycle diagram](img/lifecycle.svg)
 
 The lazy evaluation makes mocking/stubbing shared resources much easier for unit testing with frameworks/libraries such as [jest](https://jestjs.io/docs/en/mock-functions#mocking-modules), [sinon](https://sinonjs.org/releases/v7.3.2/mocks/), [simple-mock](https://github.com/jupiter/simple-mock#mock), etc...
 
@@ -310,12 +311,6 @@ export.handler = lambdaFunc(handler).use(myCustomMiddleware(myMiddlewareConfig))
 ```
 
 All of the middlewares function can be either synchronous or asynchronous, it's up to you and your use case.
-
-## AWS Middleware JS Lifecycle
-
-AWS Middleware JS provides a lifecycle for use when building service functions, the motivation for this was to make the lambdas more testable by removing side effects from the lambda files.
-
-![Lifecycle diagram](img/lifecycle.svg)
 
 ## Why
 
