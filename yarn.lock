@@ -884,10 +884,10 @@ autolinker@~0.15.0:
   resolved "https://registry.yarnpkg.com/autolinker/-/autolinker-0.15.3.tgz#342417d8f2f3461b14cf09088d5edf8791dc9832"
   integrity sha1-NCQX2PLzRhsUzwkIjV7fh5HcmDI=
 
-ava-env@^2.0.0:
-  version "2.0.0"
-  resolved "https://registry.yarnpkg.com/ava-env/-/ava-env-2.0.0.tgz#8b867a89fba9ca79d2d41c689aeee0affdf8b408"
-  integrity sha512-q9Ymz2LMhH0EHqxR29W6n3NwyUPBpOxP3QCZh7g9IcNRn19R/9k+EuAotgQhy5Kv9mgUL09fOM9xRz6/hQjWHg==
+ava-env@^2.0.1:
+  version "2.0.1"
+  resolved "https://registry.yarnpkg.com/ava-env/-/ava-env-2.0.1.tgz#d41306741853bc1ff5ba4521826c2de309962451"
+  integrity sha512-ObMbrAB32YEpkaoFGVoEkw0ZFoZ+uKpE7HdiCw5JDJfvok+sJUca+Ee7BSaxL2drmap0c+qnR1gO4oEGNcUbtw==
   dependencies:
     lodash.clonedeep "^4.5.0"
 
