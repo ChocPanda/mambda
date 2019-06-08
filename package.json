@@ -1,8 +1,7 @@
 {
   "name": "mambda",
-  "version": "1.1.1",
+  "version": "1.1.2",
   "description": "A Middleware and lifecycle framework for build AWS Lambdas",
-  "main": "dist/index.js",
   "author": "ChocPanda",
   "repository": "github:ChocPanda/mambda",
   "bugs": "https://github.com/ChocPanda/mambda/issues",
