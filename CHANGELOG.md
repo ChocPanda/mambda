@@ -1,3 +1,10 @@
+## [1.1.2](https://github.com/ChocPanda/mambda/compare/v1.1.1...v1.1.2) (2019-06-08)
+
+
+### Bug Fixes
+
+* Remove main from the package json ([6f748db](https://github.com/ChocPanda/mambda/commit/6f748db))
+
 ## [1.1.1](https://github.com/ChocPanda/mambda/compare/v1.1.0...v1.1.1) (2019-06-01)
 
 
