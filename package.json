@@ -41,7 +41,7 @@
     "@semantic-release/changelog": "^3.0.2",
     "@semantic-release/git": "^7.0.8",
     "ava": "^2.0.0",
-    "ava-env": "^2.0.1",
+    "ava-env": "^2.0.2",
     "codacy-coverage": "^3.4.0",
     "commitizen": "^3.1.1",
     "cz-conventional-changelog": "2.1.0",
