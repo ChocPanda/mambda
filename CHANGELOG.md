@@ -1,3 +1,15 @@
+# [2.0.0](https://github.com/ChocPanda/mambda/compare/v1.1.2...v2.0.0) (2019-07-06)
+
+
+### chore
+
+* Force a release ([38f284a](https://github.com/ChocPanda/mambda/commit/38f284a))
+
+
+### BREAKING CHANGES
+
+* Don't release source code with the build
+
 ## [1.1.2](https://github.com/ChocPanda/mambda/compare/v1.1.1...v1.1.2) (2019-06-08)
 
 
