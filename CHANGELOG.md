@@ -1,3 +1,10 @@
+## [2.1.3](https://github.com/ChocPanda/mambda/compare/v2.1.2...v2.1.3) (2019-07-07)
+
+
+### Bug Fixes
+
+* **publish:** Attempt to fix post publish script ([c108461](https://github.com/ChocPanda/mambda/commit/c108461)), closes [#29](https://github.com/ChocPanda/mambda/issues/29)
+
 ## [2.1.2](https://github.com/ChocPanda/mambda/compare/v2.1.1...v2.1.2) (2019-07-07)
 
 
