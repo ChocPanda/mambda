@@ -1,3 +1,10 @@
+# [2.1.0](https://github.com/ChocPanda/mambda/compare/v2.0.0...v2.1.0) (2019-07-07)
+
+
+### Features
+
+* Add the middlewares/index.js to the release ([f5b8f47](https://github.com/ChocPanda/mambda/commit/f5b8f47))
+
 # [2.0.0](https://github.com/ChocPanda/mambda/compare/v1.1.2...v2.0.0) (2019-07-06)
 
 
