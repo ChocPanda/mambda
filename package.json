@@ -26,7 +26,6 @@
     "lint:report": "xo --reporter junit > ./reports/xo/test-results.xml",
     "lint:md": "remark ./README.md src/**/README.md --output",
 		"release": "semantic-release",
-		"postpublish": "node ./scripts/post-publish.js",
     "docs-toc": "node ./scripts/update-toc.js"
   },
   "files": [
