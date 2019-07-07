@@ -26,10 +26,12 @@
     "lint:report": "xo --reporter junit > ./reports/xo/test-results.xml",
     "lint:md": "remark ./README.md src/**/README.md --output",
 		"release": "semantic-release",
-    "docs-toc": "node ./scripts/update-toc.js"
+		"docs-toc": "node ./scripts/update-toc.js",
+		"postpublish": "node ../scripts/post-publish.js"
   },
   "files": [
-    "**/*"
+    "**/index.js",
+    "**/*.md"
   ],
   "dependencies": {
     "http-errors": "^1.7.2"
