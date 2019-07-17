@@ -228,9 +228,10 @@ _The logger must be set to be used._
 
 ## Middleware
 
--   [JSON Body Parser](./src/middlewares/json-body-parser/README.md)
--   [Http Error Handling](./src/middlewares/http-error-handler/README.md)
--   [Http Header Normalizer](./src/middlewares/http-error-handler/README.md)
+-   [JSON Body Parser](./src/middlewares/json-body-parser/json-body-parser.README.md)
+-   [Http Error Handling](./src/middlewares/http-error-handler/http-error-handler.README.md)
+-   [Http Header Normalizer](./src/middlewares/http-error-handler/http-error-handler.README.md)
+-   [SSM Parameter Resolver](./src/middlewares/ssm-param-resolver/ssm-param-resolver.README.md)
 -   _Content Negotiation_ - [Coming soon...](https://github.com/ChocPanda/mambda/issues/4)
 -   _Http Query Parser_ - [Coming soon...](https://github.com/ChocPanda/mambda/issues/5)
 -   [...Your idea here](https://github.com/ChocPanda/mambda/issues/new)
