@@ -161,7 +161,7 @@ exports.handler = lambda(myAsyncHandler)
 
 ### Lifecycle additions
 
-Mambda adds an initialisation step to the lambda function, mambda lazily evaluates the resource and caches the result for [reuse of the execution enviroment](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html).
+Mambda adds an initialisation step to the lambda function, mambda lazily evaluates the resource and caches the result for [reuse of the execution environment](https://docs.aws.amazon.com/lambda/latest/dg/best-practices.html).
 
 ![Lifecycle diagram](img/lifecycle.svg)
 
@@ -322,7 +322,7 @@ All of the middlewares function can be either synchronous or asynchronous, it's 
 
 ### Reduce boilerplate for writing lambda functions
 
-  When writing lambdas there can be a fair bit of boiler plate code wrapping up the business logic and cluttering your code base, AWS middleware abstracts this out into common reusable middlewares that can be configured and shared accross all your lambdas
+  When writing lambdas there can be a fair bit of boiler plate code wrapping up the business logic and cluttering your code base, AWS middleware abstracts this out into common reusable middlewares that can be configured and shared across all your lambdas
 
 ## References
 
@@ -346,4 +346,4 @@ See our [contributing doc](./CONTRIBUTING.md), be sure to checkout the [code of 
 
 ### Conventional Commits
 
-This project used [conventianal commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#specification) to manage versions and releases of the library therefore when making a commit please use `yarn commit <COMMIT_PARAMETERS>` and this will guide you through writing a conventional commit message which can be understood work with the ci pipeline
+This project used [conventional commits](https://www.conventionalcommits.org/en/v1.0.0-beta.3/#specification) to manage versions and releases of the library therefore when making a commit please use `yarn commit <COMMIT_PARAMETERS>` and this will guide you through writing a conventional commit message which can be understood work with the ci pipeline
