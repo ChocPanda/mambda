@@ -15,7 +15,7 @@ Please note we have a [code of conduct](#code-of-conduct), please follow it in a
    - Ensure you're branch is appropriately tested, `yarn run test` or `yarn run test:report` to get coverage data
    - Linted according to the [xo config](https://github.com/xojs/xo) with `yarn lint:fix`
 5. Update the README.md with details of the changes.
-6. Ensure you're using our [convential commits](./README.md#conventional-commits) for your commit messages
+6. Ensure you're using our [conventional commits](./README.md#conventional-commits) for your commit messages
 7. Versioning and tagging are handled by Circle ci so no need to manually do anything there for the release
 8. [RAISE THE PR](https://github.com/ChocPanda/mambda/compare)
 9. You may merge the Pull Request in once you have the sign-off, or if you do not have permission to do that just poke the author.
