@@ -43,7 +43,7 @@
     "ava-env": "^2.0.2",
     "codacy-coverage": "^3.4.0",
     "commitizen": "^3.1.1",
-    "cz-conventional-changelog": "2.1.0",
+    "cz-conventional-changelog": "3.0.0",
     "markdown-toc": "^1.2.0",
     "ninos": "^3.0.0",
     "nyc": "^14.0.0",
