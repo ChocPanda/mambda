@@ -17,8 +17,8 @@
     "commit": "git-cz",
     "build": "rollup -c",
     "test": "nyc ava",
-		"test:unit": "nyc ava",
-    "test:integration": "ava --config ava.integration.config.js",		
+    "test:unit": "nyc ava",
+    "test:integration": "ava --config ava.integration.config.js",
     "test:cov": "nyc ava && nyc report",
     "test:report": "nyc ava --tap | tap-junit --output ./reports/ava --name test-results.xml",
     "lint": "xo",
@@ -26,16 +26,18 @@
     "lint:fix": "xo --fix",
     "lint:report": "xo --reporter junit > ./reports/xo/test-results.xml",
     "lint:md": "remark ./README.md src/**/README.md --output",
-		"release": "semantic-release",
-		"docs-toc": "node ./scripts/update-toc.js",
-		"postpublish": "node ../scripts/post-publish.js"
+    "release": "semantic-release",
+    "docs-toc": "node ./scripts/update-toc.js",
+    "postpublish": "node ../scripts/post-publish.js"
   },
   "files": [
     "**/index.js",
     "**/*.md"
   ],
   "dependencies": {
-    "http-errors": "^1.7.2"
+    "aws-sdk": "^2.496.0",
+    "http-errors": "^1.7.2",
+    "jszip": "^3.2.2"
   },
   "devDependencies": {
     "@semantic-release/changelog": "^3.0.2",
