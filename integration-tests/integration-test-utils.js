@@ -7,7 +7,7 @@ const iam = new AWS.IAM({ region: process.env.AWS_DEFAULT_REGION });
 const readFile = util.promisify(fs.readFile);
 const lambda = new AWS.Lambda({ region: process.env.AWS_DEFAULT_REGION });
 
-const lambda_trust = {
+const lambdaTrust = {
     Version: "2012-10-17",
     Statement: [
         {
@@ -28,7 +28,7 @@ const withRole = (roleName, policyDoc) => async continuation => {
             Arn: arn
         }
     } = await iam.createRole({
-        AssumeRolePolicyDocument: JSON.stringify(lambda_trust),
+        AssumeRolePolicyDocument: JSON.stringify(lambdaTrust),
         Path: "/",
         RoleName: fullRoleName
     }).promise();

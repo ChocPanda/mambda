@@ -10,7 +10,7 @@ const ssm = new AWS.SSM({ region: process.env.AWS_DEFAULT_REGION });
 const functionName = "lambda-with-ssm-param-resolver";
 const roleName = "SSM-Int-Test";
 
-const policy_doc = {
+const policyDoc = {
     "Version": "2012-10-17",
     "Statement": [
         {
@@ -54,7 +54,7 @@ const withSsmParams = params => async continuation => {
 test('SSM Parameter Resolving Middleware - Integration test', async t => {
     await withRole(
         roleName,
-        policy_doc
+        policyDoc
     )(
         async roleArn => withLambda(
             functionName,
