@@ -63,7 +63,12 @@
     "xo": "^0.25.0"
   },
   "xo": {
-    "prettier": "true"
+		"prettier": "true",
+		"rules": {
+			"unicorn/expiring-todo-comments": [
+				"off"
+			]
+		}
   },
   "config": {
     "commitizen": {
