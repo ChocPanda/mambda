@@ -60,10 +60,15 @@
     "shelljs": "^0.8.3",
     "shx": "^0.3.2",
     "tap-junit": "^3.1.0",
-    "xo": "^0.24.0"
+    "xo": "^0.25.0"
   },
   "xo": {
-    "prettier": "true"
+		"prettier": "true",
+		"rules": {
+			"unicorn/expiring-todo-comments": [
+				"off"
+			]
+		}
   },
   "config": {
     "commitizen": {

@@ -13,7 +13,7 @@ module.exports = ({
 } = {}) => {
 	const responseBodyFn = createResponseBody(responseBodyParams);
 	return {
-		onError: (event = {}, error) => {
+		onError: (event = {}, error = {}) => {
 			if (error instanceof HttpError) {
 				return {
 					...event,
