@@ -46,7 +46,7 @@
     "commitizen": "^4.0.0",
     "markdown-toc": "^1.2.0",
     "ninos": "^3.0.0",
-    "nyc": "^14.0.0",
+    "nyc": "^15.0.0",
     "path": "^0.12.7",
     "remark-cli": "^7.0.1",
     "remark-preset-lint-recommended": "^3.0.2",
