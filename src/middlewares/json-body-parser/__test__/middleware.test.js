@@ -64,7 +64,7 @@ test('Json Parsing Middleware - should throw an unprocessable entity exception i
 				body: testBadInput,
 				headers: { 'Content-Type': 'application/json' }
 			}),
-		HttpError
+		{ instanceOf: HttpError }
 	);
 
 	t.is(error.status, 422);
@@ -124,7 +124,7 @@ test('Json Parsing Middleware - should handle exceptions from custom json parser
 				body: testBadInput,
 				headers: { 'Content-Type': 'application/json' }
 			}),
-		HttpError
+		{ instanceOf: HttpError }
 	);
 
 	t.is(error.status, 422);
