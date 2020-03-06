@@ -53,7 +53,7 @@
     "remark-cli": "^7.0.1",
     "remark-preset-lint-recommended": "^3.0.3",
     "remark-preset-lint-styleguide": "^1.0.0",
-    "rollup": "^1.29.1",
+    "rollup": "^2.0.0",
     "rollup-plugin-copy": "^3.2.1",
     "rollup-plugin-license": "^0.13.0",
     "semantic-release": "^17.0.2",
